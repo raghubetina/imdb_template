@@ -7,6 +7,10 @@ class Director < ApplicationRecord
 
   # Indirect associations
 
+  has_many   :actors,
+             :through => :filmography,
+             :source => :cast
+
   # Validations
 
   validates :name, :presence => true
